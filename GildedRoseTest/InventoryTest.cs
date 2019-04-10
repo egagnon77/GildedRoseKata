@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using FluentAssertions;
 
 namespace GildedRoseKataTest
 {
@@ -9,7 +10,7 @@ namespace GildedRoseKataTest
         public void FailTest()
         {
             var inventory = new GildedRoseKata.Inventory();
-            inventory.UpdateQuality();
+            inventory.UpdatePrice();
             Assert.False(true);
         }
     }
