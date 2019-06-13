@@ -13,7 +13,7 @@ namespace GildedRoseKata
         }
 
         private void Initialize()
-        {          
+        {
             Items = new List<Item>
             {
                 new Item {Name = "+5 Dexterity Vest", Expiration = 10, Price = 20},
@@ -22,7 +22,7 @@ namespace GildedRoseKata
                 new Item {Name = "Sulfuras, Hand of Ragnaros", Expiration = 0, Price = 80},
                 new Item {Name = "Backstage passes to a TAFKAL80ETC concert", Expiration = 15, Price = 20},
                 new Item {Name = "Conjured Mana Cake", Expiration = 3, Price = 6}
-            };           
+            };
         }
 
         public void UpdatePrice()

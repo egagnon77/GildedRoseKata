@@ -10,7 +10,7 @@ a new category of items.
  
 First an introduction to our system:
 
-* All items have a Expiration value which denotes the number of days we have to sell the item
+* All items have an Expiration value which denotes the number of days we have to sell the item
 * All items have a Price value which denotes how valuable the item is
 * At the end of each day our system lowers by 1 both values for every item 
 
@@ -33,7 +33,6 @@ update to our system:
 
 * "Conjured" items degrade in Price twice as fast as normal items
 
-Feel free to make any changes to the UpdatePrice method and add any 
-new code as long as everything still works correctly. 
-However, do not alter the Item class or Items property as those belong to the goblin 
-in the corner who will insta-rage and one-shot you as he doesn't believe in shared code ownership.
+Feel free to make any changes (Refactoring) to the UpdatePrice method and add any 
+new code as long as everything still works correctly (Test business rules using TDD). 
+However, do not alter the Item class or Items property.
