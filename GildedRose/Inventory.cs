@@ -5,7 +5,7 @@ namespace GildedRoseKata
 {
     public class Inventory
     {
-        private IList<Item> Items;
+        public IList<Item> Items;
 
         public Inventory()
         {
@@ -27,87 +27,19 @@ namespace GildedRoseKata
 
         public void UpdatePrice()
         {
-            for (var i = 0; i < Items.Count; i++)
+            foreach(var item in Items)
             {
-                if (Items[i].Name != "Aged Brie" && Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
-                {
-                    if (Items[i].Price > 0)
-                    {
-                        if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                        {
-                            Items[i].Price = Items[i].Price - 1;
-                        }
-                    }
-                }
-                else
-                {
-                    if (Items[i].Price < 50)
-                    {
-                        Items[i].Price = Items[i].Price + 1;
-
-                        if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
-                        {
-                            if (Items[i].Expiration < 11)
-                            {
-                                if (Items[i].Price < 50)
-                                {
-                                    Items[i].Price = Items[i].Price + 1;
-                                }
-                            }
-
-                            if (Items[i].Expiration < 6)
-                            {
-                                if (Items[i].Price < 50)
-                                {
-                                    Items[i].Price = Items[i].Price + 1;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                {
-                    Items[i].Expiration = Items[i].Expiration - 1;
-                }
-
-                if (Items[i].Expiration < 0)
-                {
-                    if (Items[i].Name != "Aged Brie")
-                    {
-                        if (Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
-                        {
-                            if (Items[i].Price > 0)
-                            {
-                                if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                                {
-                                    Items[i].Price = Items[i].Price - 1;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            Items[i].Price = Items[i].Price - Items[i].Price;
-                        }
-                    }
-                    else
-                    {
-                        if (Items[i].Price < 50)
-                        {
-                            Items[i].Price = Items[i].Price + 1;
-                        }
-                    }
-                }
+                item.Price--;
+                item.Expiration--;
             }
-        }
-
+        }            
     }
 
     public class Item
     {
         public string Name { get; set; }
         public int Expiration { get; set; }
-        public int Price { get; set; }
+        public int Price { get; set; }         
     }
 }
 
